@@ -22,7 +22,7 @@ Before running the project, ensure you have Python and Flask installed:
 - Python 3
 - Flask
 
-## Setup
+## Setup (Linux-Ubuntu)
 
 1. **Clone the repository:**
 ```
@@ -30,11 +30,12 @@ git clone https://github.com/joaolscosta/taskmaster.git
 cd taskmaster
 ```
 
-2. **Create and activate a virtual environment:**
+2. **Create and activate a virtual environment (can be not necessary if it runs without it):**
 
 ```
+sudo apt install python3.10-venv
 python -m venv venv # Create a virtual environment
-source venv/bin/activate # Activate the virtual environment (for Windows, use venv\Scripts\activate)
+source venv/bin/activate # Activate the virtual environment
 ```
 
 3. **Install dependencies:**
