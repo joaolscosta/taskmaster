@@ -1,6 +1,6 @@
 # TaskMaster
 
-TaskMaster is a web application for managing your to-do list. It allows users to add tasks, mark them as completed, and remove them from the list.
+TaskMaster is a web application for managing your to-do list. It allows users to add tasks and remove them from the list.
 
 ## Files Included
 
@@ -19,32 +19,37 @@ TaskMaster is a web application for managing your to-do list. It allows users to
 
 Before running the project, ensure you have Python and Flask installed:
 
-- Python 3.x
+- Python 3
 - Flask
 
 ## Setup
 
 1. **Clone the repository:**
-
-git clone <repository-url>
-cd TaskMaster
+```
+git clone https://github.com/joaolscosta/taskmaster.git
+cd taskmaster
+```
 
 2. **Create and activate a virtual environment:**
 
+```
 python -m venv venv # Create a virtual environment
 source venv/bin/activate # Activate the virtual environment (for Windows, use venv\Scripts\activate)
-
+```
 
 3. **Install dependencies:**
 
-pip install -r requirements.txt # Install Flask and other dependencies
-
+```
+pip install flask # Install Flask and other dependencies
+```
 
 ## Run the Project
 
 1. **Start the Flask application:**
 
+```
 python app.py
+```
 
 This will start the Flask development server.
 
@@ -57,8 +62,6 @@ Open a web browser and go to `http://localhost:5000` to view and interact with T
 - Type a task into the input field and click the "+" button or press Enter.
 - **Removing a Task:**
 - Click the "Remove" button next to the task you want to remove.
-- **Viewing Task Count:**
-- The number of current tasks is displayed at the top of the task list.
 
 ## Technologies Used
 
