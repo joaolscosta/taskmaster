@@ -1,6 +1,6 @@
 # TaskMaster
 
-TaskMaster is a web application for managing your to-do list. It allows users to add tasks and remove them from the list.
+TaskMaster is a web application for managing your to-do list. It allows users to add, remove and list tasks.
 
 ## Files Included
 
