@@ -23,8 +23,8 @@
     </div>
     <ul id="task-list">
         {% for task in tasks %}
-            <!-- Unique id per task rendered by Flask. Ex: task-1, task-2 -->
-            <li id="task-{{ loop.index }}"> {{ task }} <button class="remove-btn">Remove</button></li>
+            <!-- Unique id per task rendered by Flask. Ex: task-0, task-1, etc -->
+            <li id="task-{{ task['id'] }}"> {{ task['text'] }} <button class="remove-btn">Remove</button></li>
         {% endfor %}
     </ul>
     <script src="/static/js/scripts.js"></script>

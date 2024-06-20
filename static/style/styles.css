@@ -72,7 +72,7 @@ form {
     background-color: #609ae6;
 }
 
-/* ------------------------ LIST OF TASKS ------------------------ */
+/* ------------------------ TASK COUNT ------------------------ */
 
 h2 {
     font-family: 'Work Sans', sans-serif;
@@ -88,6 +88,8 @@ h2 {
     text-align: center;
     font-size: 22px;
 }
+
+/* ------------------------ LIST OF TASKS ------------------------ */
 
 #task-list {
     margin: 20px auto;
@@ -125,7 +127,6 @@ li {
     cursor: pointer;
     border-radius: 7px;
     font-size: 15px;
-    size: 10px;
     position: absolute;
     right: 20px;
     bottom: 11px;

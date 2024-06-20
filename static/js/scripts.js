@@ -31,23 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains('remove-btn')) {
             // get the all task item with the remove button
             const taskItem = event.target.parentElement;
-            // get the task text (firstChild) 
-            const taskText = taskItem.firstChild.textContent.trim();
-            removeTask(taskText);
+            // remove task id
+            const taskId = taskItem.id.replace('task-', '');
+            removeTask(taskId);
         }
     });
 
+    // Send a POST request to the '/add' route on the Flask server
     function addTask(task) {
         fetch('/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: 'task=' + encodeURIComponent(task)
+            body: 'task=' + encodeURIComponent(task) // Example of a task encoded: 'task=Buy%20milk'
         })
         .then(response => response.json())
         .then(data => {
-            const newTask = `<li id="task-${data.tasks.length}">${task} <button class="remove-btn">Remove</button></li>`;
+            const newTask = `<li id="task-${data.task.id}">${task} <button class="remove-btn">Remove</button></li>`;
             taskList.insertAdjacentHTML('beforeend', newTask);
             updateTaskCount();
         })
@@ -56,22 +57,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function removeTask(task) {
+    // Send a POST request to the '/remove' route on the Flask server
+    function removeTask(taskId) {
         fetch('/remove', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: 'task=' + encodeURIComponent(task)
+            body: 'task_id=' + encodeURIComponent(taskId)
         })
         .then(response => response.json())
         .then(data => {
-            const taskItem = document.getElementById(`task-${data.tasks.length}`);
-            taskItem.remove();
-            updateTaskCount();
+            const taskItem = document.getElementById(`task-${taskId}`);
+            if (taskItem) {
+                taskItem.remove();
+                updateTaskCount();
+            }
         })
         .catch(error => {
-            console.error('Error while removing new task:', error);
+            console.error('Error while removing task:', error);
         });
     }
 });
